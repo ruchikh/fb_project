@@ -1,0 +1,45 @@
+{
+ "name": "mini-post",
+ "version": "1.0.0",
+ "description": "",
+ "main": "index.js",
+ "scripts": {
+  "test": "echo \"Error: no test specified\" && exit 1",
+  "start": "NODE_ENV=development nodemon app.js"
+ },
+ "author": "",
+ "license": "ISC",
+ "dependencies": {
+  "bcrypt": "^3.0.4",
+  "connect-mongo": "^2.0.3",
+  "cors": "^2.8.5",
+  "ejs": "^2.6.1",
+  "express": "^4.16.4",
+  "express-session": "^1.15.6",
+  "mongoose": "^5.4.0",
+  "nodemon": "^1.18.9",
+  "passport": "^0.4.0",
+  "passport-local": "^1.0.0",
+  "react": "^16.6.3",
+  "react-dom": "^16.6.3",
+  "react-redux": "^6.0.0",
+  "react-router-dom": "^4.3.1",
+  "react-scripts": "2.1.1",
+  "redux": "^4.0.1",
+  "redux-thunk": "^2.3.0"
+ },
+ "devDependencies": {
+  "@babel/plugin-proposal-class-properties": "^7.2.1",
+  "@babel/preset-react": "^7.0.0",
+  "css-loader": "^2.0.0",
+  "file-loader": "^2.0.0",
+  "mini-css-extract-plugin": "^0.5.0",
+  "node-sass": "^4.11.0",
+  "sass-loader": "^7.1.0",
+  "style-loader": "^0.23.1",
+  "webpack": "^4.27.1",
+  "webpack-cli": "^3.1.2",
+  "webpack-dev-middleware": "^3.4.0",
+  "webpack-hot-middleware": "^2.24.3"
+ }
+}
