@@ -106,7 +106,9 @@ module.exports = {
         }) 
       }
       req.login(user, function(err) {
-        if (err) { return next(err); }
+        if (err) {
+         return next(err); 
+       }
         return res.status(200).json({
           user 
         })
@@ -140,3 +142,6 @@ module.exports = {
 	}
 
 }
+
+//error boundary 
+//higher order component

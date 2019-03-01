@@ -30,7 +30,7 @@ class SignIn extends Component {
   	const {currentUser} = this.props;
     return (
       <div className="signin-page">
-      	<form>
+      	<form className="signin-form">
       		<input type="text" name="username" placeholder="Enter username" onChange={this.handleChange}/>
       		<input type="password" name="password" placeholder="Enter Password" onChange={this.handleChange} />
       		<input type="button" value="Submit" onClick={this.handleSubmit}/>

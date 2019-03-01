@@ -22,7 +22,7 @@ export default function rootReducer(state=initState, action){
 		case "LOGIN_SUCCESS": {
 			return {
 				...state,
-				curentUser: action.data
+				currentUser: action.data
 			}
 		}
 		case "LOGOUT_SUCCESS":{

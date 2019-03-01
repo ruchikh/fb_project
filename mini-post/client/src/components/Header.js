@@ -7,12 +7,7 @@ class Header extends Component {
 
 	handleLogout = () => {
 		console.log("logout")
-		this.props.dispatch(loggedOut(suceess => {
-			if(suceess){
-				this.props.history.push('/signin')
-			}
-		}))
-
+		this.props.dispatch(loggedOut())
 	}
 
   render() {
@@ -22,15 +17,16 @@ class Header extends Component {
         <h1><Link to="/">MiniPost</Link></h1>
       {
       	
-      (!currentUser) ?
-      <div>
+      (!currentUser.username) ?
+        (<div className="header-right">
         <h4><Link to="/signin">SignIn</Link></h4>
         <Link to="/signup"><h4>SignUp</h4></Link>
-        </div> : 
-        <div>
+        </div>) : 
+        (<div>
         	<button onClick={this.handleLogout}>LogOut</button>
-        </div>
+        </div>)
       }
+      <h4>{currentUser.username}</h4>
       </div>
     );
   }

@@ -55,7 +55,7 @@ app.use(cors());
 
 require('./server/modules/passport')(passport)
 
-app.use("/api", require("./server/routes/api"));
+app.use("/routesapi", require("./server/routes/api"));
 app.use(require("./server/routes/index"));
 
 app.listen(port, () => {

@@ -69,6 +69,10 @@ export function addComment(data, postId){
 	}
 }
 
+
+
+/*LogIn Signup*/
+
 export function createUser(data){
 	return (dispatch) => {
 		fetch(`${url}/signup`, {
