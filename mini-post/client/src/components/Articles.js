@@ -42,7 +42,7 @@ class Articles extends Component {
 	      	<form onSubmit={this.handleChange}>
 	      		<input type="text" name="title" placeholder="Title" onChange={this.handleChange} />
 	      		<textarea name="description" placeholder="write story" onChange={this.handleChange} />
-	      		<input type="button" value="Submit" onClick={this.handleSubmit}/>
+	      		<input type="button" className="Submit-btn" value="Submit" onClick={this.handleSubmit}/>
 	      	</form>) : null
 
 

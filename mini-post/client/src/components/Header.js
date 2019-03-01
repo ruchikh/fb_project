@@ -24,9 +24,9 @@ class Header extends Component {
         </div>) : 
         (<div>
         	<button onClick={this.handleLogout}>LogOut</button>
+          <h4>{currentUser.username}</h4>
         </div>)
       }
-      <h4>{currentUser.username}</h4>
       </div>
     );
   }

@@ -31,9 +31,9 @@ class SignIn extends Component {
     return (
       <div className="signin-page">
       	<form className="signin-form">
-      		<input type="text" name="username" placeholder="Enter username" onChange={this.handleChange}/>
-      		<input type="password" name="password" placeholder="Enter Password" onChange={this.handleChange} />
-      		<input type="button" value="Submit" onClick={this.handleSubmit}/>
+      		<input type="text" name="username" className="login-input" placeholder="Enter username" onChange={this.handleChange}/>
+      		<input type="password" name="password" className="login-input" placeholder="Enter Password" onChange={this.handleChange} />
+      		<input type="button" className="login-input" value="Submit" onClick={this.handleSubmit}/>
       	</form>
       </div>
     );
