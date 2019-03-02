@@ -36,27 +36,9 @@ h1, h2, h3, h4, h5, h6, p{
 	background: #2e3c4f;
 	// margin-top: 10px;
 }
-
-// input{
-// 	display: block;
-// 	// margin: 5px 0;
-// 	// width: 50%;
-// 	padding: 0.8em 7em;
-// 	margin: 10px 0;
-// 	border: none;
-// 	width: 50%;
-// }
-
-.Submit-btn{
-	padding: 10px;
-}
-
-
 .signin-form{
 	width: 50%;
 	margin: 0 auto;
-	// margin: 80px auto;
-	// margin-top: 5em;
 }
 
 .login-input{
@@ -64,8 +46,73 @@ h1, h2, h3, h4, h5, h6, p{
 	display: inline-block;
 	margin: 5px 0;
 }
+.logout{
+	display: grid;
+	grid-template-columns: 1fr 2fr;
+
+	h4{
+		vertical-align: 5px;
+	}
+}
 
 .home-page{
 	width: 80%;
-	margin: 0 auto;
+	margin: 2em 17em;
+	p{
+		width: 70%;
+		margin: 10px 0;
+		font-size: 20px;
+	}
+	h2{
+		margin: 20px 0;
+	}
 }
+
+.title{
+	width: 53.3%;
+	padding: 10px;
+	border: bottom;
+	font-size: 18px;
+	display: block;
+	text-transform: capitalize;
+}
+
+.description{
+	margin: 10px 0;
+	display: block;
+}
+.submit-btn{
+	padding: 10px 21px;
+	text-align: center;
+	background: black;
+	color: white;
+	border: none;
+	font-size: 20px;
+
+}
+
+.blog-title{
+	margin: 20px 0;
+	h1{
+		margin: 18px 0;
+		color: black;
+		text-decoration-color: black;
+		text-transform: capitalize;
+
+	}
+
+	link{
+	}
+}
+
+.buttons{
+	button{
+		padding: 5px 10px;
+		margin-left: 10px;
+	}
+}
+
+// .main-homepage{
+// 	display: grid;
+// 	grid-template-columns: 1fr 1fr;
+// }

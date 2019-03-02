@@ -35,29 +35,31 @@ class Articles extends Component {
   	const {articles} = this.props;
   	const {currentUser} = this.props;
     return (
-      <div className="home-page">
-	      {
-	      	(currentUser.username) ?
-	      	(
-	      	<form onSubmit={this.handleChange}>
-	      		<input type="text" name="title" placeholder="Title" onChange={this.handleChange} />
-	      		<textarea name="description" placeholder="write story" onChange={this.handleChange} />
-	      		<input type="button" className="Submit-btn" value="Submit" onClick={this.handleSubmit}/>
-	      	</form>) : null
+    	<div className="main-homepage">
+	      <div className="home-page">
+		      {
+		      	(currentUser.username) ?
+		      	(
+		      	<form onSubmit={this.handleChange}>
+		      		<input type="text" name="title" className="title" placeholder="Title" onChange={this.handleChange} />
+		      		<textarea name="description" cols="70" rows="10" className="description" placeholder="write story" onChange={this.handleChange} />
+		      		<input type="button" className="submit-btn" value="Submit" onClick={this.handleSubmit}/>
+		      	</form>) : null
 
 
-	      }
+		      }
 
-	      	<div>
-	      		{
-	      			articles && articles.map(article =>
-	      			<div>
-	      				<Link to={`article/${article._id}`}><h1>{article.title}</h1></Link>
-	      			</div> 
-	      			)
-	      		}
-	      	</div> 
-	      
+		      	<h2>List of Posts</h2>
+		      	<div className="blog-title">
+		      		{
+		      			articles && articles.map(article =>
+		      			<div>
+		      				<Link to={`article/${article._id}`}><h1>{article.title}</h1></Link>
+		      			</div> 
+		      			)
+		      		}
+		      	</div> 
+	      </div>
       </div>
     );
   }

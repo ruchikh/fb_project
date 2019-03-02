@@ -24,11 +24,11 @@ class SignUp extends Component {
   render() {
     return (
       <div className="signin-page">
-      	<form>
-      		<input type="text" name="username" placeholder="Name" onChange={this.handleChange}/>
-      		<input type="text" name="email" placeholder="Enter Email" onChange={this.handleChange}/>
-      		<input type="password" name="password" placeholder="Enter Password" onChange={this.handleChange} />
-      		<input type="button" value="Submit" onClick={this.handleSubmit}/>
+      	<form className="signin-form">
+      		<input type="text" name="username" className="login-input" placeholder="Name" onChange={this.handleChange}/>
+      		<input type="text" name="email" className="login-input" placeholder="Enter Email" onChange={this.handleChange}/>
+      		<input type="password" name="password" className="login-input"  placeholder="Enter Password" onChange={this.handleChange} />
+      		<input type="button" className="login-input" value="Submit" onClick={this.handleSubmit}/>
       	</form>
       </div>
     );

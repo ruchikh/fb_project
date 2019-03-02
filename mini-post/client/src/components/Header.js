@@ -22,9 +22,9 @@ class Header extends Component {
         <h4><Link to="/signin">SignIn</Link></h4>
         <Link to="/signup"><h4>SignUp</h4></Link>
         </div>) : 
-        (<div>
-        	<button onClick={this.handleLogout}>LogOut</button>
+        (<div className="logout">
           <h4>{currentUser.username}</h4>
+          <div onClick={this.handleLogout}><i class="fas fa-sign-out-alt"></i></div>
         </div>)
       }
       </div>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {getSingleArticle, deletePost, addComment} from '../actionCreator/action';
+import {getSingleArticle, deletePost, addComment, isLoggedIn} from '../actionCreator/action';
 import {Link} from 'react-router-dom';
 
 class Articles extends Component {
@@ -39,27 +39,39 @@ class Articles extends Component {
 	componentDidMount(){
 		const postId = this.props.match.params.id;
 	 	this.props.dispatch(getSingleArticle(postId))
-	 	// this.props.dispatch(getAllComment())
+		this.props.dispatch(isLoggedIn())
 	}
 
 
   render() {
-  	const {article} = this.props;
+  	const {article, currentUser} = this.props;
+
     return (
       <div className="home-page">
       	<div>
       		<h1>{article.title}</h1>
       		<p>{article.description}</p>
       		<div>
-      			<button onClick={this.handleClick}>Edit</button>
-      			<button onClick={() => {this.handleDelete(article._id)}}>Delete</button>
+      		{
+      			(currentUser.username) ?
+      			(
+      			<div className="buttons">
+      				<button onClick={this.handleClick}>Edit</button>
+      				<button onClick={() => {this.handleDelete(article._id)}}>Delete</button>
+      			</div>) : <div></div>
+      			
+      		}
       		</div>
       	</div>
-
-      	<form>
-      		<textarea cols="30" rows="3" onChange={this.handleChange} placeholder="comment..." />
-      		<input type="button" value="Submit" />
-      	</form>
+      	<div>
+	      	{
+	      		(currentUser.username) ?
+		      	(<form>
+		      		<textarea cols="30" rows="3" onChange={this.handleChange} placeholder="comment..." />
+		      		<input type="button" value="Submit" />
+		      	</form>) : null
+	      	}
+      	</div>
       </div>
     );
   }
@@ -67,7 +79,8 @@ class Articles extends Component {
 
 const mapStateToProps = (state) => {
 	return {
-		article: state.SingleArticle
+		article: state.SingleArticle,
+		currentUser: state.currentUser
 	}
 }
 
