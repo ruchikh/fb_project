@@ -56,7 +56,8 @@ export function deletePost(id, cb){
 	}	
 }
 
-export function addComment(data, postId){
+export function addComment(data, postId, cb){
+	console.log(data)
 	return (dispatch) => {
 		fetch(`${url}/article/${postId}/comment`, {
 			method: "POST",
@@ -65,7 +66,22 @@ export function addComment(data, postId){
 			},
 			body: JSON.stringify(data)
 		}).then(res => res.json())
-		.then(data => console.log(data))
+		.then(data => {
+			console.log(data)
+			dispatch({type:"POST_COMMENT", data})
+			cb(true)
+		})
+	}
+}
+
+export function getAllComment(postId){
+	return dispatch => {
+		fetch(`${url}/article/${postId}`).then(res => res.json()).then(data => {
+			console.log(data)
+			dispatch({
+				type: "GET_ALL_COMMENT", data: data
+			})
+		})
 	}
 }
 

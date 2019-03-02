@@ -1,7 +1,8 @@
 const initState = {
 	allArticles: [],
 	SingleArticle: {},
-	currentUser: {}
+	currentUser: {},
+	allComment: []
 }
 
 
@@ -17,6 +18,12 @@ export default function rootReducer(state=initState, action){
 			return {
 				...state,
 				SingleArticle: action.data
+			}
+		}
+		case "GET_ALL_COMMENT": {
+			return {
+				...state,
+				allComment: action.data
 			}
 		}
 		case "LOGIN_SUCCESS": {

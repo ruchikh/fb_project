@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
-import {getSingleArticle, deletePost, addComment, isLoggedIn} from '../actionCreator/action';
+import {getSingleArticle, deletePost, addComment, isLoggedIn, getAllComment} from '../actionCreator/action';
 import {Link} from 'react-router-dom';
 
 class Articles extends Component {
@@ -17,9 +17,21 @@ class Articles extends Component {
 	}
 
 	handleSubmit = () => {
+		console.log("comment part")
 		const postId = this.props.match.params.id
-		this.props.dispatch(addComment(this.state, postId))
-		
+		this.props.dispatch(addComment(this.state, postId, (succeed) => {
+			if(succeed){
+				this.props.dispatch(getAllComment(postId))
+			}
+		}))		
+	}
+
+
+	componentDidMount(){
+		const postId = this.props.match.params.id;
+	 	this.props.dispatch(getSingleArticle(postId));
+	 	this.props.dispatch(getAllComment(postId));
+		this.props.dispatch(isLoggedIn())
 	}
 
 
@@ -36,11 +48,6 @@ class Articles extends Component {
 
 	}
 
-	componentDidMount(){
-		const postId = this.props.match.params.id;
-	 	this.props.dispatch(getSingleArticle(postId))
-		this.props.dispatch(isLoggedIn())
-	}
 
 
   render() {
@@ -66,9 +73,9 @@ class Articles extends Component {
       	<div>
 	      	{
 	      		(currentUser.username) ?
-		      	(<form>
+		      	(<form onSubmit={this.handleSubmit}>
 		      		<textarea cols="30" rows="3" onChange={this.handleChange} placeholder="comment..." />
-		      		<input type="button" value="Submit" />
+		      		<input type="button" value="Submit" onClick={this.handleSubmit}/>
 		      	</form>) : null
 	      	}
       	</div>

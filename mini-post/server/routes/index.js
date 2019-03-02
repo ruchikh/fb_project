@@ -27,8 +27,9 @@ router.get('/api/article', postController.getAllArticle);
 router.get('/api/article/:id', postController.getSingleArticle);
 router.delete('/api/article/:id', postController.deletePost);
 router.post('/api/article/:id/comment', postController.addComment);
-router.get('/api/isLoggedIn', postController.isLoggedIn)
-router.get('/api/logout', postController.loggedOut)
+router.get('/api/article/:id', postController.getAllComment);
+router.get('/api/isLoggedIn', postController.isLoggedIn);
+router.get('/api/logout', postController.loggedOut);
 
 
 module.exports =router;

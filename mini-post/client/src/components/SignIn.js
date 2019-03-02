@@ -29,7 +29,7 @@ class SignIn extends Component {
   render() {
   	const {currentUser} = this.props;
     return (
-      <div className="sining-page">
+      <div className="signin-page">
       	<form className="signin-form">
       		<input type="text" name="username" className="login-input" placeholder="Enter username" onChange={this.handleChange}/>
       		<input type="password" name="password" className="login-input" placeholder="Enter Password" onChange={this.handleChange} />

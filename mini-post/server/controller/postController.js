@@ -64,6 +64,7 @@ module.exports = {
 	},
 
 	addComment: (req, res) =>{
+		console.log(req.body)
 		var newComment = new Comment({
 			value: req.body.value
 		})
@@ -74,6 +75,14 @@ module.exports = {
 			}else{
 				res.json({data})
 			}
+		})
+	},
+
+	getAllComment: (req, res) => {
+		Comment.find({_id:postId}, (err, data) => {
+			console.log(data)
+			if(err) res.send(err)
+				res.json(data)
 		})
 	},
 
@@ -98,7 +107,6 @@ module.exports = {
 
   loginUser: (req, res, next) => {
     passport.authenticate('local', function(err, user, info) {
-      console.log(user, "check1")
       if (err) { return next(err); }
       if (!user) { 
         return res.status(404).json({

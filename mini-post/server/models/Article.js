@@ -5,7 +5,16 @@ const Schema = mongoose.Schema;
 
 const articleSchema = new mongoose.Schema({
 	title: String,
-	description: String
+	description: String,
+	created: {type: Date, default: Date.now},
+	author: {
+        type: Schema.Types.ObjectId,
+        ref:'User'
+    },
+    comments: [{
+    		type: Schema.Types.ObjectId,
+    		ref: 'Comment'
+    }]
 })
 
 
